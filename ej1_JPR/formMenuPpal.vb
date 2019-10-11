@@ -1,9 +1,9 @@
-﻿Public Class formMenuPpal
-    Private Sub formMenuPpal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+﻿Public Class FormMenuPpal
+    Private Sub FormMenuPpal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         etqVarUserMP.Text = login.txtUsNomIn.Text
     End Sub
 
-    Private Sub textOpcionIn_TextChanged(sender As Object, e As EventArgs) Handles textOpcionIn.TextChanged
+    Private Sub TextOpcionIn_TextChanged(sender As Object, e As EventArgs) Handles textOpcionIn.TextChanged
 
         Dim opciones As String = textOpcionIn.Text
 

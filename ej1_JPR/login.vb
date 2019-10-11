@@ -9,7 +9,7 @@ Public Class login
                 If txtUsPassIn.Text = datos_login(pos, 1) Then
                     usuario_activo = txtUsNomIn.Text
                     Me.Hide()
-                    formMenuPpal.Show()
+                    FormMenuPpal.Show()
                     Exit For
                 Else
                     MsgBox("error de login")
@@ -35,7 +35,7 @@ Public Class login
         Next
         'entrada directa
         Me.Hide()
-        formMenuPpal.Show()
+        FormMenuPpal.Show()
     End Sub
 
     Private Sub btnLoginCXL_Click(sender As Object, e As EventArgs) Handles btnLoginCXL.Click
