@@ -31,9 +31,9 @@ Partial Class formMenuPpal
         Me.etqIntroOpc = New System.Windows.Forms.Label()
         Me.etqBvda = New System.Windows.Forms.Label()
         Me.etqVarUserMP = New System.Windows.Forms.Label()
+        Me.textOpcionIn = New System.Windows.Forms.TextBox()
         Me.FormAluDataInBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.FormAluDataInBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbOpcionIn = New System.Windows.Forms.TextBox()
         CType(Me.FormAluDataInBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormAluDataInBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -110,6 +110,13 @@ Partial Class formMenuPpal
         Me.etqVarUserMP.TabIndex = 8
         Me.etqVarUserMP.Text = "Hola "
         '
+        'textOpcionIn
+        '
+        Me.textOpcionIn.Location = New System.Drawing.Point(133, 225)
+        Me.textOpcionIn.Name = "textOpcionIn"
+        Me.textOpcionIn.Size = New System.Drawing.Size(27, 20)
+        Me.textOpcionIn.TabIndex = 9
+        '
         'FormAluDataInBindingSource1
         '
         Me.FormAluDataInBindingSource1.DataSource = GetType(ej1_JPR.formAluDataIn)
@@ -118,20 +125,13 @@ Partial Class formMenuPpal
         '
         Me.FormAluDataInBindingSource.DataSource = GetType(ej1_JPR.formAluDataIn)
         '
-        'tbOpcionIn
-        '
-        Me.tbOpcionIn.Location = New System.Drawing.Point(133, 225)
-        Me.tbOpcionIn.Name = "tbOpcionIn"
-        Me.tbOpcionIn.Size = New System.Drawing.Size(27, 20)
-        Me.tbOpcionIn.TabIndex = 9
-        '
         'formMenuPpal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(277, 277)
         Me.ControlBox = False
-        Me.Controls.Add(Me.tbOpcionIn)
+        Me.Controls.Add(Me.textOpcionIn)
         Me.Controls.Add(Me.etqVarUserMP)
         Me.Controls.Add(Me.etqBvda)
         Me.Controls.Add(Me.etqIntroOpc)
@@ -159,5 +159,5 @@ Partial Class formMenuPpal
     Friend WithEvents etqVarUserMP As Label
     Friend WithEvents FormAluDataInBindingSource1 As BindingSource
     Friend WithEvents FormAluDataInBindingSource As BindingSource
-    Friend WithEvents tbOpcionIn As TextBox
+    Friend WithEvents textOpcionIn As TextBox
 End Class

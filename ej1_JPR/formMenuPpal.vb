@@ -3,13 +3,16 @@
         etqVarUserMP.Text = login.txtUsNomIn.Text
     End Sub
 
-    Private Sub tbOpcionIn_TextChanged(sender As Object, e As EventArgs) Handles tbOpcionIn.TextChanged
-        Dim opciones As String
+    Private Sub textOpcionIn_TextChanged(sender As Object, e As EventArgs) Handles textOpcionIn.TextChanged
+
+        Dim opciones As String = textOpcionIn.Text
+
         Select Case opciones
             Case 1
                 'introducir alumnos
                 Me.Hide()
                 formAluDataIn.Show()
+
             Case 2
                 'consultar alumnos
 

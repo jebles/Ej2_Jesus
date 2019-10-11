@@ -33,6 +33,9 @@ Public Class login
             datos_login(i, 0) = us & i
             datos_login(i, 1) = cl & i
         Next
+        'entrada directa
+        Me.Hide()
+        formMenuPpal.Show()
     End Sub
 
     Private Sub btnLoginCXL_Click(sender As Object, e As EventArgs) Handles btnLoginCXL.Click
