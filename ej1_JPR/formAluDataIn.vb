@@ -1,6 +1,6 @@
 ﻿Public Class formAluDataIn
     Friend regAluCount As Integer = 0
-    Friend varAlumno() As alumno
+
 
     Private Sub BtnCXLregAlu_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -93,7 +93,7 @@
         LimpiarCampos()
     End Sub
 
-    Private Sub LimpiarCampos()
+    Friend Sub LimpiarCampos()
         txtApeAlu.Clear()
         txtCodAlu.Clear()
         txtCursoAlu.Clear()
