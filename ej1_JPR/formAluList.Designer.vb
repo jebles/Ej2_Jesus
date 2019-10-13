@@ -22,18 +22,18 @@ Partial Class formAluList
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtListaAlu = New System.Windows.Forms.TextBox()
         Me.btnSalirList = New System.Windows.Forms.Button()
         Me.btnFinList = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'txtListaAlu
         '
-        Me.TextBox1.Location = New System.Drawing.Point(22, 13)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(216, 429)
-        Me.TextBox1.TabIndex = 0
+        Me.txtListaAlu.Location = New System.Drawing.Point(22, 13)
+        Me.txtListaAlu.Multiline = True
+        Me.txtListaAlu.Name = "txtListaAlu"
+        Me.txtListaAlu.Size = New System.Drawing.Size(216, 429)
+        Me.txtListaAlu.TabIndex = 0
         '
         'btnSalirList
         '
@@ -63,7 +63,7 @@ Partial Class formAluList
         Me.ControlBox = False
         Me.Controls.Add(Me.btnFinList)
         Me.Controls.Add(Me.btnSalirList)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtListaAlu)
         Me.Name = "formAluList"
         Me.Text = "Listado de Alumnos"
         Me.ResumeLayout(False)
@@ -71,7 +71,7 @@ Partial Class formAluList
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtListaAlu As TextBox
     Friend WithEvents btnSalirList As Button
     Friend WithEvents btnFinList As Button
 End Class

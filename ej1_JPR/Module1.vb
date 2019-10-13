@@ -6,18 +6,7 @@
         Public telfAlum As String
         Public emailAlum As String
         Public cursoAlum As String
-        Public sub sacarPorMsbox()
-            MsgBox(
-            "Código: " + codAlum.ToString + vbCrLf +
-            "Nombre: " + nomAlum.ToString() + vbCrLf +
-            "Apellidos: " + apellAlum.ToString() + vbCrLf +
-            "Teléfono: " + telfAlum.ToString + vbCrLf +
-            "Mail: " + emailAlum.ToString + vbCrLf +
-            "Curso: " + cursoAlum.ToString,
-            0,
-            "Detalles del alumno registrado"
-            )
-        End sub
+
     End Structure
 
 End Module

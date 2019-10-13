@@ -21,9 +21,14 @@
                 textOpcionIn.Clear()
             Case 3
                 'ordenar array de alumnos
+                Dim alusOrdenados = From alumno In varAlumno
+                                    Order By alumno.apellAlum
+                varAlumno = alusOrdenados.ToArray
+                MsgBox("Alumnos ordenados por apellidos")
                 textOpcionIn.Clear()
             Case 4
                 'listar array
+                formAluList.Show()
                 textOpcionIn.Clear()
             Case 5
                 'salir
