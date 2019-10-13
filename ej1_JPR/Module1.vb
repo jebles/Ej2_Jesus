@@ -3,7 +3,7 @@
         Public codAlum As Integer
         Public nomAlum As String
         Public apellAlum As String
-        Public telfAlum As Double
+        Public telfAlum As String
         Public emailAlum As String
         Public cursoAlum As String
         Public Function sacarPorMsbox()

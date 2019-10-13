@@ -27,20 +27,20 @@
 
     Private Sub AddAlumno()
 
+
         ReDim Preserve varAlumno(regAluCount) 'actualiza el tamaño de la matriz según num de alumnos en registro
 
         'If CamposValidos() = True Then
 
         varAlumno(regAluCount).nomAlum = txtNomAlu.Text
-            varAlumno(regAluCount).apellAlum = txtApeAlu.Text
-        varAlumno(regAluCount).telfAlum = CType(txtTelAlu.Text, Single)
+        varAlumno(regAluCount).apellAlum = txtApeAlu.Text
+        varAlumno(regAluCount).telfAlum = txtTelAlu.Text
         varAlumno(regAluCount).emailAlum = txtMailAlu.Text
         varAlumno(regAluCount).cursoAlum = txtCursoAlu.Text
-            'varAlumno(regAluCount).sacarPorMsbox()
-            regAluCount += 1 'contador de alumnos registrados [1er alumno -> 0]
+        'varAlumno(regAluCount).sacarPorMsbox()
+        regAluCount += 1 'contador de alumnos registrados [1er alumno -> 0]
         ' Else
         LimpiarCampos()
-            AddAlumno()
         ' End If
 
     End Sub
@@ -108,17 +108,14 @@
     End Sub
 
 
-
-
-
-    Private Sub FormAluDataIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PrepararEntradaNueva()
-    End Sub
-
     Private Sub PrepararEntradaNueva()
         LimpiarCampos()
         etqVarUsuario.Text = login.txtUsNomIn.Text
         txtCodAlu.Text = regAluCount
-        btnRegAlu.Select()
+        txtNomAlu.Select()
+    End Sub
+
+    Private Sub formAluDataIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PrepararEntradaNueva()
     End Sub
 End Class
