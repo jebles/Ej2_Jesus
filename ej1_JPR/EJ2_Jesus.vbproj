@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formConsAlu.Designer.vb">
+      <DependentUpon>formConsAlu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formConsAlu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formMenuPpal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="formConsAlu.resx">
+      <DependentUpon>formConsAlu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formAluDataIn.resx">
       <DependentUpon>formAluDataIn.vb</DependentUpon>
     </EmbeddedResource>

@@ -79,7 +79,7 @@
         End If
     End Function
 
-    Private Function Validar_vacio_esp_nan(valorCampoTxt As String) As Boolean
+    Friend Function Validar_vacio_esp_nan(valorCampoTxt As String) As Boolean
         If IsNumeric(valorCampoTxt) Or valorCampoTxt = " " Or IsNothing(valorCampoTxt) Then
             MsgBox("El dato introducido <<" & valorCampoTxt & ">> no es válido", MsgBoxStyle.Exclamation)
             Validar_vacio_esp_nan = False
@@ -108,7 +108,7 @@
     End Sub
 
 
-    Private Sub PrepararEntradaNueva()
+    Friend Sub PrepararEntradaNueva()
         LimpiarCampos()
         etqVarUsuario.Text = login.txtUsNomIn.Text
         txtCodAlu.Text = regAluCount
