@@ -125,11 +125,11 @@ Partial Class FormMenuPpal
         '
         Me.FormAluDataInBindingSource.DataSource = GetType(ej1_JPR.formAluDataIn)
         '
-        'formMenuPpal
+        'FormMenuPpal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(277, 277)
+        Me.ClientSize = New System.Drawing.Size(234, 277)
         Me.ControlBox = False
         Me.Controls.Add(Me.textOpcionIn)
         Me.Controls.Add(Me.etqVarUserMP)
@@ -140,7 +140,7 @@ Partial Class FormMenuPpal
         Me.Controls.Add(Me.etqOpc3)
         Me.Controls.Add(Me.etqOpc2)
         Me.Controls.Add(Me.etqOpc1)
-        Me.Name = "formMenuPpal"
+        Me.Name = "FormMenuPpal"
         Me.Text = "Alumnos"
         CType(Me.FormAluDataInBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FormAluDataInBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

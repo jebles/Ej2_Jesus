@@ -17,7 +17,6 @@
                 PrepararEntradaNueva()
             Case Else
                 'no
-
                 LimpiarCampos()
                 Me.Hide()
                 FormMenuPpal.textOpcionIn.Clear()
@@ -30,32 +29,59 @@
 
         ReDim Preserve varAlumno(regAluCount) 'actualiza el tamaño de la matriz según num de alumnos en registro
 
-        varAlumno(regAluCount).codAlum = regAluCount
-        ValidarCampos()
+        'If CamposValidos() = True Then
+
         varAlumno(regAluCount).nomAlum = txtNomAlu.Text
-        varAlumno(regAluCount).apellAlum = txtApeAlu.Text
-        varAlumno(regAluCount).telfAlum = txtTelAlu.Text
+            varAlumno(regAluCount).apellAlum = txtApeAlu.Text
+        varAlumno(regAluCount).telfAlum = CType(txtTelAlu.Text, Single)
         varAlumno(regAluCount).emailAlum = txtMailAlu.Text
         varAlumno(regAluCount).cursoAlum = txtCursoAlu.Text
+            'varAlumno(regAluCount).sacarPorMsbox()
+            regAluCount += 1 'contador de alumnos registrados [1er alumno -> 0]
+        ' Else
+        LimpiarCampos()
+            AddAlumno()
+        ' End If
 
-        'varAlumno(regAluCount).sacarPorMsbox()
-
-        regAluCount += 1 'contador de alumnos registrados [1er alumno -> 0]
     End Sub
-    Private Sub ValidarCampos()
+    Friend Function CamposValidos() As Boolean
         Dim camposAluArrayTxt() As String = {txtNomAlu.Text, txtApeAlu.Text, txtMailAlu.Text, txtCursoAlu.Text}
-        Dim camposAluArrayNum() As Integer = {txtTelAlu.Text}
-
+        Dim tel As String = txtTelAlu.Text
+        Dim textosValidos As Boolean
+        Dim telefonoValido As Boolean
 
         For Each campo In camposAluArrayTxt
-            Validar_vacio_esp_nan(campo)
+            If Validar_vacio_esp_nan(campo) = False Then
+                MsgBox("Introduce de nuevo los datos")
+                textosValidos = False
+            End If
         Next
+        MsgBox("tel " & tel)
+        If Validar_vacio_esp_numeros(tel) = False Then
+            MsgBox("Introduce de nuevo el teléfono")
+            telefonoValido = False
+        End If
 
-    End Sub
+        If textosValidos And telefonoValido Then
+            CamposValidos = True
+        Else
+            CamposValidos = False
+        End If
 
-    Private Function Validar_vacio_esp_nan(campo As String) As Boolean
-        If campo = "" Or IsNumeric(campo) Or campo = " " Then
-            MsgBox("El dato introducido <<" & campo & ">> no es válido", MsgBoxStyle.Exclamation)
+    End Function
+
+    Private Function Validar_vacio_esp_numeros(valorCampoNum As String) As Boolean
+        If Not IsNumeric(valorCampoNum) Then
+            MsgBox("El dato introducido <<" & valorCampoNum & ">> no es válido", MsgBoxStyle.Exclamation)
+            Validar_vacio_esp_numeros = False
+        Else
+            Validar_vacio_esp_numeros = True
+        End If
+    End Function
+
+    Private Function Validar_vacio_esp_nan(valorCampoTxt As String) As Boolean
+        If IsNumeric(valorCampoTxt) Or valorCampoTxt = " " Or IsNothing(valorCampoTxt) Then
+            MsgBox("El dato introducido <<" & valorCampoTxt & ">> no es válido", MsgBoxStyle.Exclamation)
             Validar_vacio_esp_nan = False
         Else
             Validar_vacio_esp_nan = True
@@ -82,15 +108,7 @@
     End Sub
 
 
-    'TODO: reusar para mostrar en form de resultado de busqueda
-    'Private Sub Mostrar(alu As alumno)
-    '    txtCodAlu.Text = alu.codAlum.ToString()
-    '    txtNomAlu.Text = alu.nomAlum.ToString()
-    '    txtApeAlu.Text = alu.apellAlum.ToString()
-    '    txtTelAlu.Text = alu.telfAlum.ToString()
-    '    txtMailAlu.Text = alu.emailAlum.ToString()
-    '    txtCursoAlu.Text = alu.cursoAlum.ToString()
-    'End Sub
+
 
 
     Private Sub FormAluDataIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
